@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>Mclickable.qml</file>
     </qresource>
 </RCC>
