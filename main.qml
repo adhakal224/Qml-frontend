@@ -7,8 +7,8 @@ import QtMultimedia 5.14
 Window {
     id: rootId
     visible: true
-    width: 940
-    height: 780
+    width: 1200
+    height: 880
     title: qsTr("Camera Project4")
 
     //defining necessary variables
@@ -25,49 +25,17 @@ Window {
     RowLayout{
         anchors.fill: parent
         spacing: 0
+       Toolfeatures{
+          width: rootId.width/4
+          Layout.fillHeight: true
+          Layout.fillWidth: true
+       }
 
       //rectangle for all tools
-      Rectangle{
-          id: toolsId
-          color: toolsBg
-          Layout.fillHeight: true
-          width: rootId.width/4
-          Layout.fillWidth: true
-
-          Rectangle{
-              radius: 40
-              anchors.horizontalCenter: parent.horizontalCenter
-              y: 50
-              width: parent.width/1.5
-              height: 40
-              border.color: "white"
-              border.width: 3
-              color: parent.color
+        //rectangle for all tools
 
 
-          Label{
-              anchors.centerIn: parent
-              wrapMode: "Wrap"
-              id: tooltextId
-              text: "Camera Tools"
-              color: "white"
-              font.pointSize: 12
-              font.family: "helvetica"
 
-          }
-          }
-
-          Container{
-              Label{
-                  text: "Zoom In"
-                  color: "white"
-                  font.family: "helvetica"
-
-              }
-          }
-
-
-      }
 
       ColumnLayout{
         spacing: 0
@@ -77,7 +45,7 @@ Window {
           color: "green"
           //Layout.fillHeight: true
           width: rootId.width * 3 / 4
-          height: roodId.height / 1.5
+          height: rootId.height / 1.25
           Layout.fillHeight: true
           Layout.fillWidth: true
 
@@ -104,11 +72,7 @@ Window {
           id: starterId
           color: startBg
           width: rootId.width * 3 / 4
-          height: rootId.height * (1 - 1/1.5)
-//          Layout.fillWidth: true
-//          Layout.fillHeight: true
-
-
+          height: rootId.height * (1 - 1/1.25)
 
         }
 
