@@ -12,16 +12,11 @@ Window {
     title: qsTr("Camera Project4")
 
     //defining necessary variables
-    property color toolsBg: "#262827"
-    property color startBg: "#282828"
-    Component.onCompleted: {
+    property color toolsBg: "#212529"
+    property color bgcolor: Qt.rgba(0.2, 0.3, 0.4, 0.95)
+    color: bgcolor
 
-    }
-
-
-    color: startBg
-
-    //Laying out the two main content rows (One for the tools and another for the Camera
+    //Laying out the two main content rows (One for the tools and another for the Camera Viewer)
     RowLayout{
         anchors.fill: parent
         spacing: 0
@@ -29,13 +24,8 @@ Window {
           width: rootId.width/4
           Layout.fillHeight: true
           Layout.fillWidth: true
+
        }
-
-      //rectangle for all tools
-        //rectangle for all tools
-
-
-
 
       ColumnLayout{
         spacing: 0
@@ -67,12 +57,37 @@ Window {
               fillMode: VideoOutput.Stretch
           }
       }
-        //Rectangle for start button
+        //Rectangle for start button area
       Rectangle{
           id: starterId
-          color: startBg
+          color: bgcolor
           width: rootId.width * 3 / 4
           height: rootId.height * (1 - 1/1.25)
+          Layout.fillHeight: true
+
+          //this links to the ButtonStart file
+          ButtonStart{
+              anchors.horizontalCenter: parent.horizontalCenter
+              y: 40
+              MouseArea{
+                  id: mouseId
+                  anchors.fill: parent
+
+                  //defines what to do on a click
+                  onClicked: {
+                    popupWindowId.show()
+                  }
+
+                  hoverEnabled: true
+                  cursorShape: Qt.PointingHandCursor
+                  }
+          }
+
+          //This links to the new window file
+          NewWindow{
+              id: popupWindowId
+              color: toolsBg
+          }
 
         }
 

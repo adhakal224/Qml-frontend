@@ -1,7 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Mclickable.qml</file>
         <file>Toolfeatures.qml</file>
+        <file>startButton.qml</file>
+        <file>ButtonStart.qml</file>
+        <file>NewWindow.qml</file>
     </qresource>
 </RCC>
